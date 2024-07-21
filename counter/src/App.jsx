@@ -1,20 +1,26 @@
 import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const increase =()=>{
-    setCount(count+1)
+let [counter,setcounter]=useState(15)
+let addval=()=>{
+  setcounter(counter+1)
+  
+}
+let removeval=()=>{
+  if(counter>0){
+  setcounter(counter-1)
   }
-  const decrease =()=>{
-    setCount(count-1)
-  }
+}
   return (
     <>
-     <h1>count = {count}</h1>
-     <button onClick={increase}>Increase value</button>
-     <br />
-     <button onClick={decrease}>decrease value</button>
+     <h1 className="bg-black p-4 rounded-md "> Rohit Mali</h1>
+     <h2>Counter value : {counter}</h2>
+     <button className="m-6 " onClick={addval}>Add Value</button>
+     <br/>
+     <button onClick={removeval}>Remove value</button>
     </>
   )
 }
